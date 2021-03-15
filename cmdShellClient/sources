@@ -1,0 +1,29 @@
+TARGETNAME	=	cmdShellClient
+TARGETTYPE	=	PROGRAM
+TARGETPATH	=	EXE
+
+UMTYPE		=	console			# консольний
+UMENTRY	=	wmain			# ANSI-додаток 
+USE_MSVCRT	=	1				# використовувати RTL динамічних бібліотек Msvcrt*.dll
+									# USE_LIBCMT - використовувати статичні бібліотеки
+									# USE_NTDLL -  використовувати Ntdll.dll
+									# USE_NOLIBS - НЕ використовувати RTL
+
+MSC_OPTIMIZATION = /Od /Oi	# прибрати оптимізацію для спрощення відлагодження
+									# потрібно закоментувати при збиранні фінальної версії
+				 
+#DEBUG_CRTS	=	1				# використовувати версії CRT і MFC для відлагодження
+									# увага ! потребує попереднього встановлення бібліотек
+
+C_DEFINES		=	$(C_DEFINES)  /D_UNICODE /DUNICODE
+#USER_C_FLAGS	=	/FAs		# генерація еквівалентного асемблерного лістингу
+									# (корисно при відлагодженні)
+							
+#TARGETLIBS	=	$(SDK_LIB_PATH)
+
+#INCLUDES	=	$(SDK_INC_PATH);
+
+SOURCES		=	cmdShellClient.c \
+					cmdShellClient.rc
+
+

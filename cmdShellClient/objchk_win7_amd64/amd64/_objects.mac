@@ -1,0 +1,17 @@
+
+
+AMD64_OBJECTS=\
+ $(OBJ_PATH)\$O\cmdshellclient.obj \
+
+
+_RES_FILE=$(OBJ_PATH)\$O\cmdshellclient.res
+
+
+
+# lowercased
+BASEDIR=c:\winddk
+OBJECT_ROOT=c:\winddk
+MAKEDIR_LOWERCASE=c:\radasm\wdk\projects\coursework\cmdshellclient
+OBJ_PATH=c:\radasm\wdk\projects\coursework\cmdshellclient
+CONCURRENT_MIDL=0
+CONCURRENT_MANIFEST_BUILD=0

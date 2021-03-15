@@ -1,0 +1,18 @@
+Шаблон консольного додатку мовою С для компіляції штатними засобами
+Windows Driver Kit (WDK 7600.16385.1). 
+При компіляції використовується файл radasmbuild.cmd, отриманий незначною 
+модернізацією штатного setenv.bat зі складу WDK.
+При використанні в командному рядку синтаксис наступний: 
+radasmbuild.cmd <WDK_directory> [fre|chk] [64|x64] [WIN7|WLH|WXP|WNET] [bscmake] [no_oacr] [separate_object_root] <Project directory>
+<Project directory> - шлях до каталогу проекту, інші параметри аналогічні setenv.bat
+За замовчуванням виконується компіляція 32-розрядного ANSI-додатка Windows XP.
+За необхідності для компіляції 64-розрядного та/або UNICODE-додатка іншої версії Windows:
+1) зняти коментар (#) з рядка C_DEFINES = $(C_DEFINES)  /D_UNICODE /DUNICODE 
+у файлі sources
+2) змінити опис main на wmain в с-файлі і рядок UMENTRY = main на UMENTRY = wmain
+у файлі sources
+3) Скориставшись меню "Менеджер\Налаштування проекту" змінити/прибрати/додати 
+параметри у командному рядку "Асемблер". Наприклад, для компиляції 
+UNICODE-додатка для 64-розрядноі версії ОС Windows 7/Vista/2008 Server 
+0,O,$B\radasmbuild.cmd $A chk x64 WIN7 no_oacr,3
+
